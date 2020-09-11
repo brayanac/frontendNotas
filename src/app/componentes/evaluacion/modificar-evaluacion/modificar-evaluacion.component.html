@@ -1,0 +1,92 @@
+<div>
+    <h2 mat-dialog-title>Modificar Evaluación</h2>
+    <hr />
+    <mat-dialog-content>
+      <form [formGroup]="form">
+        <div class="container">
+            <mat-form-field appearance="standard">
+                <mat-label>Fecha</mat-label>
+                <input matInput placeholder="" formControlName="fecha" maxlength="10"/>
+            </mat-form-field>
+        </div>
+
+        <div class="container">
+            <mat-form-field appearance="standard">
+                <mat-label>Porcentaje</mat-label>
+                <input matInput placeholder="" formControlName="porcentaje" maxlength="3" />
+            </mat-form-field>
+        </div>
+
+        <div class="container">
+                <mat-label>Exigible</mat-label>
+                <mat-radio-group formControlName="exigible" class="position-form">
+                    <div class="opcion">
+                        <mat-radio-button value="1">Si</mat-radio-button>
+                    </div>
+                    <div class="opcion">
+                        <mat-radio-button value="0">No</mat-radio-button>
+                    </div>
+                </mat-radio-group>
+            </div>
+    
+            <div class="container">
+                <mat-label>Área</mat-label>
+                <mat-radio-group formControlName="area" class="position-form">
+                    <div class="opcion">
+                        <mat-radio-button value="UNIDAD_1">Unidad 1</mat-radio-button>
+                    </div>
+                    <div class="opcion">
+                        <mat-radio-button value="UNIDAD_2">Unidad 2</mat-radio-button>
+                    </div>
+                    <div class="opcion">
+                        <mat-radio-button value="UNIDAD_3">Unidad 3</mat-radio-button>
+                    </div>
+                </mat-radio-group>
+            </div>
+    
+            <div class="container">
+                <mat-label>Tipo de Evaluación</mat-label>
+                <mat-radio-group formControlName="tipo" class="position-form">
+                    <div class="opcion">
+                        <mat-radio-button value="PRUEBA">Prueba</mat-radio-button>
+                    </div>
+                    <div class="opcion">
+                        <mat-radio-button value="LABORATORIO">Laboratorio</mat-radio-button>
+                    </div>
+                    <div class="opcion">
+                        <mat-radio-button value="INFORME">Informe</mat-radio-button>
+                    </div>
+                    <div class="opcion">
+                        <mat-radio-button value="TAREA">Tarea</mat-radio-button>
+                    </div>
+                </mat-radio-group>
+            </div>
+
+        <div class="container">
+            <mat-form-field appearance="standard">
+                <mat-label>Prorroga</mat-label>
+                <input matInput placeholder="" formControlName="prorroga" maxlength="30"/>
+            </mat-form-field>
+        </div>
+
+        <div class="container">
+            <mat-form-field appearance="standard">
+                <mat-label>Profesor</mat-label>
+                <input matInput placeholder="" formControlName="ref_profesor" maxlength="13"/>
+            </mat-form-field>
+        </div>
+
+        <div class="container">
+            <mat-form-field appearance="standard">
+                <mat-label>Seccion</mat-label>
+                <input matInput placeholder="" formControlName="ref_instancia_curso" maxlength="10"/>
+            </mat-form-field>
+        </div>
+      </form>
+    </mat-dialog-content>
+    <hr />
+    <mat-dialog-actions>
+      <button mat-raised-button (click)="onCloseConfirm()" [disabled]="form.invalid">Agregar</button>
+      <button mat-raised-button (click)="onCloseCancel()">Cancelar</button>
+    </mat-dialog-actions>
+  </div>
